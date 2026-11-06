@@ -43,7 +43,7 @@ class IRSystem:
             print(f"    Doc {i + 1} of {len(filenames)}: {title}")
             titles.append(title)
             contents = []
-            with open(f'{dirname}/raw/{filename}', 'r') as f, open(f'{dirname}/stemmed/{title}.txt', 'w') as of:
+            with open(f'{dirname}/raw/{filename}', 'r', encoding='utf-8', errors='ignore') as f, open(f'{dirname}/stemmed/{title}.txt', 'w', encoding='utf-8') as of:
                 for line in f:
                     # make sure everything is lower case
                     line = line.lower()
